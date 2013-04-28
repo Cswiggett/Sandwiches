@@ -1,8 +1,6 @@
 Sammiches::Application.routes.draw do
-  get "sammiches/index"
-
-resources :Sammiches
-root :to => 'Sammiches#index'
+resources :sammiches
+root :to => 'sammiches#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

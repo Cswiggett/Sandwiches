@@ -1,2 +1,12 @@
-<h1>Sammiches#index</h1>
-<p>Find me in app/views/sammiches/index.html.erb</p>
+<h1>All my Sammiches</h1>
+<%= form_for Sammich.new do |f| %>
+<%= f.label :sammich %>
+<%= f.text_field :sammich %>
+<%= f.submit %>
+<% end %>
+<ul>
+	<% for sammich in @sammiches %>
+	<li><%= sammich.name %></li>
+
+	<% end %>
+</ul>

@@ -13,16 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20130428211616) do
 
-  create_table "breads", :force => true do |t|
-    t.string   "title"
-    t.string   "description"
-    t.string   "image_url"
-    t.string   "country_origin"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
-    t.string   "type",           :limit => 60
-  end
-
   create_table "sammiches", :force => true do |t|
     t.string   "name"
     t.string   "image"
