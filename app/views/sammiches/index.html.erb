@@ -1,11 +1,11 @@
 <h1>All my Sammiches</h1>
 <%= form_for Sammich.new do |f| %>
 <%= f.label :sammich %>
-<%= f.text_field :sammich %>
-<%= f.submit %>
+<%= f.text_field :name %>
+<%= f.submit 'Find Sammich', :id => 'sammich_submit' %>
 <% end %>
 <ul>
-	<% for sammich in @sammiches %>
+	<% @sammiches.each do |sammich| %>
 	<li><%= sammich.name %></li>
 
 	<% end %>
