@@ -18,5 +18,9 @@ describe "Sammiches" do
 
     	save_and_open_page
     end
+
+    it "finds a random sammich" do
+    	visit sammiches_path
+    	
   end
 end

@@ -36,7 +36,7 @@ def summary
       if content = x.css('td')[2]
         origin = content.text
       end
-       if content = x.css('td')[4]
+       if content = x.css('td')[3]
         description =content.text
       end
     

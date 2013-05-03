@@ -1,5 +1,9 @@
 Sammiches::Application.routes.draw do
-resources :sammiches
+resources :sammiches do
+  collection do
+  get "random"
+end
+end
 root :to => 'sammiches#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.

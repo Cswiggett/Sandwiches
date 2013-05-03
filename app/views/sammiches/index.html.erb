@@ -4,9 +4,5 @@
 <%= f.text_field :name %>
 <%= f.submit 'Find Sammich', :id => 'sammich_submit' %>
 <% end %>
-<ul>
-	<% @sammiches.each do |sammich| %>
-	<li><%= sammich.name %></li>
-
-	<% end %>
-</ul>
+</br>
+<%= link_to "Random sandwich", random_sammiches_path %>
