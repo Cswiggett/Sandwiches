@@ -21,7 +21,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'pg'
+gem  'pg', '~> 0.9.0'
 
 group :test, :development do
 	gem 'turn'
