@@ -8,37 +8,18 @@ require 'open-uri'
 require 'uri'
 require 'json'
 
-sammiches = Nokogiri::HTML(open("http://en.wikipedia.org/wiki/List_of_sandwiches"))
 
 class Scraper
   
 def initialize
-  @url = "http://en.wikipedia.org/wiki/List_of_sandwiches"
-  @nodes = Nokogiri::HTML(open(@url))
+ 
+doc = Nokogiri::HTML(open("http://en.wikipedia.org/wiki/List_of_sandwiches"))  
+doc.search('sup').remove
   
-end
-
-def summary
-
-  sammich_data = @nodes
-  
-  sammiches = sammich_data.css('div.mw-content-ltr table.wikitable tr') 
-     sammich_data.search('sup').remove
-    
-    sammich_hashes = sammiches.map {|x| 
-     
-      if content = x.css('td')[0]
-        name = content.text
-      end
-       if content = x.css('td a.image').map {|link| link ['href']}
-        image =content[0]
-      end
-      if content = x.css('td')[2]
-        origin = content.text
-      end
-       if content = x.css('td')[3]
-        description =content.text
-      end
+  sammich_hashes = doc.css('table.wikitable tr').map { |tr| 
+  name, image, origin, description = tr.css('td,th')
+  name, origin, description = [name, origin, description].map{ |n| n && n.text ? n.text : nil }
+  image = image.at('img')['src'] rescue nil
     
    {
       :name => name,
@@ -53,6 +34,6 @@ def summary
   end
 
 sammichy = Scraper.new
-sammichy.summary
+sammichy.initialize
 puts "atta boy"
 

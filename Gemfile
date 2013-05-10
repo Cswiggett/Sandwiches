@@ -21,6 +21,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'pg'
 
 group :test, :development do
 	gem 'turn'

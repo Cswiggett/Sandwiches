@@ -1,6 +1,12 @@
 <h1>Look no further fella, we found it</h1>
-
-Go ahead and try a <%= @sammich.name %>.
+<% if @sammich.nil? %>
+Sorry young gunner, I don't know that one.
+<% else %>
+The infamous <%= @sammich.name %>.
 </br>
+<%= image_tag @sammich.image %>
 </br>
 Did you know it hails from <%= @sammich.country %>?
+<% end %>
+</br>
+</br>
