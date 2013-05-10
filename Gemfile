@@ -22,18 +22,18 @@ end
 gem 'jquery-rails'
 
 
-group :test, :development do
-	gem 'turn'
-	gem 'rspec-rails'
-	gem 'capybara'
-	gem 'guard-rspec'
-	gem 'launchy'
-	gem 'mysql2'
-end
+#group :test, :development do
+	#gem 'turn'
+	#gem 'rspec-rails'
+	#gem 'capybara'
+	#gem 'guard-rspec'
+	#gem 'launchy'
+	#gem 'mysql2'
+#end
 
-group :production do
+#group :production do
   gem  'pg', '~> 0.9.0'
-end
+#end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
